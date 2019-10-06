@@ -1,4 +1,4 @@
-class ArrayStack:
+class ListStack:
     def __init__(self):
         self._data = []
 
@@ -12,7 +12,32 @@ class ArrayStack:
         print(self._data)
 
 
-stack = ArrayStack()
+class ArrayStack:
+    def __init__(self, capacity: int):
+        self._capacity = capacity
+        self._size = 0
+        self._data = [None] * capacity
+
+    def push(self, item) -> bool:
+        if self._size == self._capacity:
+            return False
+        self._data[self._size] = item
+        self._size += 1
+        return True
+
+    def pop(self):
+        if self._size == 0:
+            return None
+        val = self._data[self._size-1]
+        self._size -= 1
+        return val
+
+    def print(self):
+        print('current size: ' + str(self._size))
+        print(self._data)
+
+
+stack = ArrayStack(5)
 stack.push('bob')
 stack.push('alice')
 stack.push('daniel')
