@@ -57,4 +57,3 @@ cycle_list.remove(ListNode(1))
 cycle_list.remove(ListNode(3))
 cycle_list.remove(ListNode(2))
 cycle_list.print()
-
