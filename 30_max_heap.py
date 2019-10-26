@@ -29,10 +29,25 @@ class MaxHeap:
         i = 1
         while True:
             maxPos = i
-            if i*2 <= self._size and self._a[i*2] > self._a[i]
+            if i*2 <= self._size and self._a[i*2] > self._a[i]:
                 maxPos = i*2
-            if i*2 +1 <= self._size and self._a[i*2+1] >self._a[maxPos]
+            if i*2 +1 <= self._size and self._a[i*2+1] > self._a[maxPos]:
                 maxPos = i*2+1
             if maxPos == i:
                 break
+            self._a[maxPos], self._a[i] = self._a[i], self._a[maxPos]
             i = maxPos
+
+    def print(self):
+        print(self._a)
+
+
+max_heap = MaxHeap(5)
+max_heap.insert(4)
+max_heap.insert(5)
+max_heap.insert(6)
+max_heap.insert(1)
+max_heap.insert(2)
+max_heap.print()
+max_heap.removeMax()
+max_heap.print()
