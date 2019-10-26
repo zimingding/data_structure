@@ -31,9 +31,9 @@ class MinHeap:
         i = 1
         while True:
             minPos = i
-            if i*2 < self._size and self._a[i*2] < self._a[i]:
+            if i*2 <= self._size and self._a[i*2] < self._a[i]:
                 minPos = i*2
-            if i*2+1 < self._size and self._a[i*2+1] < self._a[minPos]:
+            if i*2+1 <= self._size and self._a[i*2+1] < self._a[minPos]:
                 minPos = i*2+1
             if minPos == i:
                 break
